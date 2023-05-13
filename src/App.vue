@@ -51,4 +51,10 @@ img {
   height: 100%;
   object-fit: cover;
 }
+h2 {
+  font-size: 2.5rem ;
+font-weight: 700;
+text-align: center;
+padding-bottom: 60px;
+}
 </style>

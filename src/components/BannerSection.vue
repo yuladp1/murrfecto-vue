@@ -1,6 +1,6 @@
 <template>
   <div class="banner__container" >
-    <p class="banner__text">Навіщо жити без кота, якщо можна жити з котом</p>
+    <h1 class="banner__text">Навіщо жити без кота, якщо можна жити з котом</h1>
   <figure>
     <img src="../assets/banner/banner.png" alt="">
   </figure>

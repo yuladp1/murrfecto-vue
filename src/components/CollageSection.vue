@@ -28,6 +28,7 @@
       </div>
     </div>
     <div class="collage__text">
+      <h2>Хто ми</h2>
       <ul>
         <li>
           Притулок Murrfecto в Києві опікується котами, які поруч з нами переживають буремні часи.
@@ -62,19 +63,20 @@ export default {
 .collage__container {
   display: flex;
   margin: 0 80px;
+  padding-top: 7.5rem;
 }
+
 .collage__images,
 .collage__text {
   flex: 1 1 50%;
-}
-.collage__images {
-
+  flex-direction: column;
 }
 .container-img-1-2, .container-img-3-4, .container-img-5-6 {
   display: flex;
 }
 .container-img-3-4 {
-  margin-top: -25%;
+  margin-top: 24px;
+  margin-left: 46px;
 }
 .collage__image-1 {
   width: 49%;
@@ -92,13 +94,11 @@ export default {
 .collage__image-3 {
   width: 100%;
   height: auto;
-  margin-right: 46%;
-  margin-top: 20%;
 }
 .collage__image-4 {
   width: 100%;
   height: auto;
-}
+  }
 .collage__image-5 {
   width: 100%;
   height: auto;
@@ -112,7 +112,6 @@ export default {
   padding-left: 5%;
 }
 .collage__text>ul {
-  width: 80%;
   flex: 1 1;
   display: flex;
   flex-direction: column;
