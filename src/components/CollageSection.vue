@@ -1,0 +1,132 @@
+<template>
+  <section class="collage__container">
+    <div class="collage__images">
+      <div class="container-img-1-2">
+        <figure class="collage__image-1">
+          <img  src="../assets/collage/1.png" alt="cats" />
+        </figure>
+        <figure class="collage__image-2">
+          <img  src="../assets/collage/2.png" alt="cats" />
+        </figure>
+      </div>
+
+      <div class="container-img-3-4">
+        <figure>
+          <img class="collage__image-3" src="../assets/collage/3.png" alt="cats" />
+        </figure>
+        <figure>
+          <img class="collage__image-4" src="../assets/collage/4.png" alt="cats" />
+        </figure>
+      </div>
+      <div class="container-img-5-6">
+      <figure>
+        <img class="collage__image-5" src="../assets/collage/5.png" alt="cats" />
+      </figure>
+      <figure>
+        <img class="collage__image-6" src="../assets/collage/6.png" alt="cats" />
+      </figure>
+      </div>
+    </div>
+    <div class="collage__text">
+      <ul>
+        <li>
+          Притулок Murrfecto в Києві опікується котами, які поруч з нами переживають буремні часи.
+        </li>
+        <li>
+          Наш притулок має близько 20 хвостів, що живуть поруч. Прайд підтримується стабільною сумою
+          коштів з місяця в місяць.
+        </li>
+        <li>
+          Коти стійко переносять все, що випадає на їхню нелегку котячу долю в цей час, але в наших
+          силах щоденно їх погодувати і почухати за вухом.
+        </li>
+        <li>Запрошуємо тебе стати віртуальним володарем справжнього кота. І він тобі віддячить!</li>
+      </ul>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: 'CollageSection',
+  created() {},
+  data() {
+    return {}
+  },
+  props: {},
+  methods: {}
+}
+</script>
+
+<style lang="scss" scoped>
+.collage__container {
+  display: flex;
+  margin: 0 80px;
+}
+.collage__images,
+.collage__text {
+  flex: 1 1 50%;
+}
+.collage__images {
+
+}
+.container-img-1-2, .container-img-3-4, .container-img-5-6 {
+  display: flex;
+}
+.container-img-3-4 {
+  margin-top: -25%;
+}
+.collage__image-1 {
+  width: 49%;
+  height: auto;
+  display: flex;
+}
+.collage__image-2 {
+  width: 38%;
+  height: auto;
+  margin-top: 20px;
+  margin-left: -20px;
+  display: flex;
+
+}
+.collage__image-3 {
+  width: 100%;
+  height: auto;
+  margin-right: 46%;
+  margin-top: 20%;
+}
+.collage__image-4 {
+  width: 100%;
+  height: auto;
+}
+.collage__image-5 {
+  width: 100%;
+  height: auto;
+}
+.collage__image-6 {
+  width: 100%;
+  height: auto;
+}
+.collage__text {
+  display: flex;
+  padding-left: 5%;
+}
+.collage__text>ul {
+  width: 80%;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  line-height: 1.88rem;
+}
+.collage__text>ul>li {
+  display: flex;
+}
+.collage__text>ul>li::before {
+content: url('../assets/icons/paw.svg');
+padding-right: 12px;
+}
+.collage__text>ul>li:not(:last-child) {
+  margin-bottom: 40px;
+}
+</style>
