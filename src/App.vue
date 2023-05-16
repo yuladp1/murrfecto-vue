@@ -2,10 +2,12 @@
 import { useCounterStore } from './stores/counter'
 import ContactsTab from './components/ContactsTab.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
+import FooterSection from './components/FooterSection.vue'
 export default {
   components: {
     ContactsTab,
        HeaderMenu,
+       FooterSection
    },
   setup() {
     const base = useCounterStore()
@@ -25,7 +27,9 @@ export default {
     <div>
       <RouterView />
     </div>
-    
+    <div>
+      <FooterSection/>
+    </div>
   </div>
 </template>
 
@@ -42,10 +46,6 @@ export default {
   font-family: 'Nunito Sans', sans-serif;
   color: #3D4756;
 }
-figure {
-width: 100%;
-height: auto;
-}
 img {
   width: 100%;
   height: 100%;
@@ -56,5 +56,14 @@ h2 {
 font-weight: 700;
 text-align: center;
 padding-bottom: 60px;
+}
+.nav__button {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.5rem;
+  padding: 17px 40px;
+  color: white;
+  background-color:#4B3542 ;
+  border-radius: 8px;
 }
 </style>

@@ -128,4 +128,9 @@ padding-right: 12px;
 .collage__text>ul>li:not(:last-child) {
   margin-bottom: 40px;
 }
+@media screen and (max-width: 900px) {
+  .collage__container {
+margin: 0 20px;
+}
+}
 </style>

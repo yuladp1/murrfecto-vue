@@ -45,6 +45,9 @@ export default {
   align-items: center;
   padding: 9px 0;
 }
+.nav__brand:hover {
+cursor: pointer;
+}
 .nav__buttons {
   display: flex;
     justify-content: flex-end;
@@ -53,20 +56,14 @@ export default {
    font-weight: 700;
 }
 .nav__buttons>*:not(:last-child) {
-  padding: 0 24px;
+  margin: 0 24px;
+  border-bottom: 2px solid #F2F2F2;
 }
-.nav__buttons>*:hover{
+.nav__buttons>*:not(:last-child):hover{
   cursor: url('../assets/icons/paw.svg'), pointer;
+  border-bottom: 2px solid #4B3542;
 }
-.nav__button {
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  line-height: 1.5rem;
-  padding: 17px 40px;
-  color: white;
-  background-color:#4B3542 ;
-  border-radius: 8px;
-}
+
 @media screen and (max-width: 1050px) {
   .nav__buttons>*:not(:last-child) {
   padding: 0 10px;

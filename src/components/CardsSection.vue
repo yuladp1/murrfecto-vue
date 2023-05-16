@@ -1,56 +1,89 @@
 <template>
-  <div>
-    <h1>cards</h1>
+  <div class="cards-section__container">
+    <h2>Наші хвости</h2>
     <div class="all-cards__wrapper">
-    <div class="one-card__wrapper">
-      <div class="front-card__wrapper">
-        <figure>
-        <img src="../assets/catHotpot.png" alt="" />
-        </figure>
+      <div class="one-card__wrapper">
+        <div class="front-card__wrapper">
+          <figure>
+            <img src="../assets/catHotpot.png" alt="" />
+          </figure>
+          <div class="front-card__text">
+            <p class="front-card__text__name">Ім'я</p>
+            <p class="front-card__text__gender">стать та вік</p>
+            <p class="front-card__text__chip">чіпований</p>
+          </div>
+        </div>
+        <div class="back-card__wrapper">
+          <figure>
+            <img src="../assets/cat-real.png" alt="" />
+          </figure>
+          <div class="back-card__text">
+            <button>Детальніше</button>
+          </div>
+        </div>
       </div>
-      <div class="back-card__wrapper">
-        <figure>
-        <img src="../assets/cat-real.png" alt="" />
-        </figure>
+      <div class="one-card__wrapper">
+        <div class="front-card__wrapper">
+          <figure>
+            <img src="../assets/catHotpot.png" alt="" />
+          </figure>
+          <div class="front-card__text">
+            <p class="front-card__text__name">Ім'я</p>
+            <p class="front-card__text__gender">стать та вік</p>
+            <p class="front-card__text__chip">чіпований</p>
+          </div>
+        </div>
+        <div class="back-card__wrapper">
+          <figure>
+            <img src="../assets/cat-real.png" alt="" />
+          </figure>
+          <div class="back-card__text">
+            <button>Детальніше</button>
+          </div>
+        </div>
+      </div>
+      <div class="one-card__wrapper">
+        <div class="front-card__wrapper">
+          <figure>
+            <img src="../assets/catHotpot.png" alt="" />
+          </figure>
+          <div class="front-card__text">
+            <p class="front-card__text__name">Ім'я</p>
+            <p class="front-card__text__gender">стать та вік</p>
+            <p class="front-card__text__chip">чіпований</p>
+          </div>
+        </div>
+        <div class="back-card__wrapper">
+          <figure>
+            <img src="../assets/cat-real.png" alt="" />
+          </figure>
+          <div class="back-card__text">
+            <button>Детальніше</button>
+          </div>
+        </div>
+      </div>
+      <div class="one-card__wrapper">
+        <div class="front-card__wrapper">
+          <figure>
+            <img src="../assets/catHotpot.png" alt="" />
+          </figure>
+          <div class="front-card__text">
+            <p class="front-card__text__name">Ім'я</p>
+            <p class="front-card__text__gender">стать та вік</p>
+            <p class="front-card__text__chip">чіпований</p>
+          </div>
+        </div>
+        <div class="back-card__wrapper">
+          <figure>
+            <img src="../assets/cat-real.png" alt="" />
+          </figure>
+          <div class="back-card__text">
+            <button>Детальніше</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="one-card__wrapper">
-      <div class="front-card__wrapper">
-        <figure>
-        <img src="../assets/catHotpot.png" alt="" />
-        </figure>
-      </div>
-      <div class="back-card__wrapper">
-        <figure>
-        <img src="../assets/cat-real.png" alt="" />
-        </figure>
-      </div>
-    </div>
-    <div class="one-card__wrapper">
-      <div class="front-card__wrapper">
-        <figure>
-        <img src="../assets/catHotpot.png" alt="" />
-        </figure>
-      </div>
-      <div class="back-card__wrapper">
-        <figure>
-        <img src="../assets/cat-real.png" alt="" />
-        </figure>
-      </div>
-    </div>
-    <div class="one-card__wrapper">
-      <div class="front-card__wrapper">
-        <figure>
-        <img src="../assets/catHotpot.png" alt="" />
-        </figure>
-      </div>
-      <div class="back-card__wrapper">
-        <figure>
-        <img src="../assets/cat-real.png" alt="" />
-        </figure>
-      </div>
-    </div>
-  </div>
+    <p class="see-all-cats" href="">Переглянути всіх</p>
   </div>
 </template>
 
@@ -67,48 +100,99 @@ export default {
 </script>
 
 <style scoped>
+.cards-section__container {
+  margin: 0 80px;
+  padding-top: 120px;
+}
 .all-cards__wrapper {
   display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .one-card__wrapper {
-  width: 200px;
-  height: 400px;
+  width: 305px;
+  height: 424px;
   position: relative;
 }
 .front-card__wrapper,
 .back-card__wrapper {
   width: 100%;
-  height: 100%;
+  height: 424px;
   position: absolute;
   backface-visibility: hidden;
-  transition: transform .6s linear ;
+  transition: transform 0.6s linear;
+  background-color: white;
+  border-radius: 20px;
 }
 .front-card__wrapper {
   transform: perspective(600px) rotateY(0deg);
-  }
-  .back-card__wrapper {
-    transform: perspective(600px) rotateY(180deg);
-  }
+}
+.front-card__text__name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.front-card__text__gender,
+.front-card__text__chip {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.front-card__text__gender:before {
+  content: url('../assets/icons/paw-small.svg');
+  width: 24px;
+  height: 24px;
+}
+.front-card__text__chip:before {
+  content: url('../assets/icons/chip.svg');
+}
+.back-card__wrapper {
+  transform: perspective(600px) rotateY(180deg);
+}
 figure {
   width: 100%;
-  height: 100%;
+  height: 295px;
   object-fit: contain;
   overflow: hidden;
+  border-radius: 20px;
 }
 img {
   object-fit: cover;
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
-.one-card__wrapper:hover >.front-card__wrapper {
+.front-card__text {
+  height: 129px;
+  width: 100%;
+  padding-top: 20px;
+  padding-left: 16px;
+}
+.back-card__text {
+  display: flex;
+  justify-content: center;
+}
+.back-card__text > button {
+  padding: 16px 80px;
+  border: 3px solid #4b3542;
+  border-radius: 8px;
+  background-color: white;
+  margin-top: 35px;
+}
+.one-card__wrapper:hover > .front-card__wrapper {
   transform: perspective(600px) rotateY(-180deg);
 }
-.one-card__wrapper:hover >.back-card__wrapper {
+.one-card__wrapper:hover > .back-card__wrapper {
   transform: perspective(600px) rotateY(0deg);
+}
+.see-all-cats {
+  margin: 60px 0 120px 0;
+  text-decoration: underline;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+font-size: 1.5rem;
 }
 </style>

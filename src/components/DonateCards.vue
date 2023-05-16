@@ -65,6 +65,8 @@ export default {
   width: 32%;
   border: 2px solid #D0BEC4;
 border-radius: 12px;
+display: flex;
+    flex-direction: column;
 }
 figure {
   width: 55%;
@@ -75,11 +77,51 @@ figure {
   height: 300px;
   display: flex;
 }
-.cards__text {
-  background-color: #D0BEC4;
-}
+
 img:hover {
   scale: 120%;
   cursor: grab;
+}
+.cards__text {
+ min-height: 166px;
+  background-color: #D0BEC4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ .cards__text>h3 {
+  display: flex;
+  font-weight: 600;
+font-size: 2rem;
+margin: 16px 0 8px 0;
+text-align: center;
+}
+.cards__text>p {
+  font-weight: 400;
+font-size: 1.25rem;
+margin: 0 8%;
+line-height: 1.88rem;
+text-align: center;
+}
+@media screen and (max-width: 900px) {
+  .donate-cards__container {
+margin: 0 20px;
+}
+}
+@media screen and (max-width: 1000px) {
+  .cards__container {
+  display: flex;
+flex-direction: column;
+align-items: center;
+ }
+ .cards__container>*:not(:last-child) {
+  margin-bottom: 20px;
+ }
+ figure {
+  width: 35%;
+}
+.card-donate {
+  width: 90%;
+}
 }
 </style>
