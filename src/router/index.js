@@ -28,9 +28,10 @@ const router = createRouter({
       component: () => import('../views/OurContacts.vue')
     },
     {
-      path: '/feed-the-cat',
-      name: 'feedСat',
-      component: () => import('../views/FeedCat.vue')
+      name: 'OneCat',
+      props: true,
+      path: '/:id',
+      component: () => import('../views/OneCat.vue')
     }
   ]
 })

@@ -33,5 +33,7 @@ export default {
 flex: 1 1;
 padding: 0 20px;
 }
-
+figure {
+  flex: 1 1;
+}
 </style>

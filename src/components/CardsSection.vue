@@ -2,15 +2,15 @@
   <div class="cards-section__container">
     <h2>Наші хвости</h2>
     <div class="all-cards__wrapper">
-      <div class="one-card__wrapper">
+      <div class="one-card__wrapper" v-for="item in counter.catsArray" :key="item.ID">
         <div class="front-card__wrapper">
           <figure>
-            <img src="../assets/catHotpot.png" alt="" />
+            <img :src="item.images[0]" alt="" />
           </figure>
           <div class="front-card__text">
-            <p class="front-card__text__name">Ім'я</p>
-            <p class="front-card__text__gender">стать та вік</p>
-            <p class="front-card__text__chip">чіпований</p>
+            <p class="front-card__text__name">{{ item.CatsName }}</p>
+            <p class="front-card__text__gender">{{ item.sex }}, {{ item.age }}</p>
+            <p class="front-card__text__chip">{{ item.chip }}</p>
           </div>
         </div>
         <div class="back-card__wrapper">
@@ -18,67 +18,7 @@
             <img src="../assets/cat-real.png" alt="" />
           </figure>
           <div class="back-card__text">
-            <button>Детальніше</button>
-          </div>
-        </div>
-      </div>
-      <div class="one-card__wrapper">
-        <div class="front-card__wrapper">
-          <figure>
-            <img src="../assets/catHotpot.png" alt="" />
-          </figure>
-          <div class="front-card__text">
-            <p class="front-card__text__name">Ім'я</p>
-            <p class="front-card__text__gender">стать та вік</p>
-            <p class="front-card__text__chip">чіпований</p>
-          </div>
-        </div>
-        <div class="back-card__wrapper">
-          <figure>
-            <img src="../assets/cat-real.png" alt="" />
-          </figure>
-          <div class="back-card__text">
-            <button>Детальніше</button>
-          </div>
-        </div>
-      </div>
-      <div class="one-card__wrapper">
-        <div class="front-card__wrapper">
-          <figure>
-            <img src="../assets/catHotpot.png" alt="" />
-          </figure>
-          <div class="front-card__text">
-            <p class="front-card__text__name">Ім'я</p>
-            <p class="front-card__text__gender">стать та вік</p>
-            <p class="front-card__text__chip">чіпований</p>
-          </div>
-        </div>
-        <div class="back-card__wrapper">
-          <figure>
-            <img src="../assets/cat-real.png" alt="" />
-          </figure>
-          <div class="back-card__text">
-            <button>Детальніше</button>
-          </div>
-        </div>
-      </div>
-      <div class="one-card__wrapper">
-        <div class="front-card__wrapper">
-          <figure>
-            <img src="../assets/catHotpot.png" alt="" />
-          </figure>
-          <div class="front-card__text">
-            <p class="front-card__text__name">Ім'я</p>
-            <p class="front-card__text__gender">стать та вік</p>
-            <p class="front-card__text__chip">чіпований</p>
-          </div>
-        </div>
-        <div class="back-card__wrapper">
-          <figure>
-            <img src="../assets/cat-real.png" alt="" />
-          </figure>
-          <div class="back-card__text">
-            <button>Детальніше</button>
+            <button @click="counter.goToCatCard(item.ID)">Детальніше</button>
           </div>
         </div>
       </div>
@@ -88,14 +28,13 @@
 </template>
 
 <script>
+import { useCounterStore } from '../stores/counter'
 export default {
-  name: 'cardsSection',
-  created() {},
-  data() {
-    return {}
-  },
-  props: {},
-  methods: {}
+  components: {},
+  setup() {
+    const counter = useCounterStore()
+    return { counter }
+  }
 }
 </script>
 
@@ -193,6 +132,6 @@ img {
   text-transform: uppercase;
   text-align: center;
   font-weight: 600;
-font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 </style>
