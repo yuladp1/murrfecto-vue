@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper">
       <div class="images">
-        <figure class="image-main"><img :src="this.cat.images[0]" alt=""></figure>
+        <figure class="image-main"><img :src="imageMain" alt=""></figure>
         <figure class="image-1"><img :src="this.cat.images[1]" alt=""></figure>
         <figure class="image-2"><img :src="this.cat.images[2]" alt=""></figure>
         <figure class="image-3"><img :src="this.cat.images[3]" alt=""></figure>
@@ -31,9 +31,10 @@ export default {
      const cat = computed(() =>
       counter.catsArray.find((c) => c.ID === props.id)
     );
+   const imageMain = this.cat.images[0]
 
     return {
-      counter, cat
+      counter, cat,imageMain
     };
   },
 };
