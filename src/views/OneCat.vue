@@ -31,10 +31,10 @@ export default {
      const cat = computed(() =>
       counter.catsArray.find((c) => c.ID === props.id)
     );
-   const imageMain = this.cat.images[0]
+
 
     return {
-      counter, cat,imageMain
+      counter, cat
     };
   },
 };
