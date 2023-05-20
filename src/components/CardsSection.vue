@@ -2,7 +2,7 @@
   <div class="cards-section__container">
     <h2>Наші хвости</h2>
     <div class="all-cards__wrapper">
-      <div class="one-card__wrapper" v-for="item in counter.catsArray" :key="item.ID">
+      <div class="one-card__wrapper" v-for="item in someCats" :key="item.ID">
         <div class="front-card__wrapper">
           <figure>
             <img :src="item.images[0]" alt="" />
@@ -15,7 +15,7 @@
         </div>
         <div class="back-card__wrapper">
           <figure>
-            <img src="../assets/cat-real.png" alt="" />
+            <img :src="item.images[1]" alt="" />
           </figure>
           <div class="back-card__text">
             <button @click="counter.goToCatCard(item.ID)">Детальніше</button>
@@ -23,17 +23,20 @@
         </div>
       </div>
     </div>
-    <p class="see-all-cats" href="">Переглянути всіх</p>
+    <p class="see-all-cats" @click="router.push({ path: `/our-cats` })">Переглянути всіх</p>
   </div>
 </template>
 
 <script>
 import { useCounterStore } from '../stores/counter'
+import { useRouter } from 'vue-router'
 export default {
   components: {},
   setup() {
     const counter = useCounterStore()
-    return { counter }
+    const router = useRouter()
+    const someCats = counter.catsArray.slice(0,4);
+    return { counter, router, someCats }
   }
 }
 </script>

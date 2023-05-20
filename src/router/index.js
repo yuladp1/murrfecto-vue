@@ -32,6 +32,12 @@ const router = createRouter({
       props: true,
       path: '/:id',
       component: () => import('../views/OneCat.vue')
+    },
+    {
+      name: 'OurCats',
+      props: true,
+      path: '/our-cats',
+      component: () => import('../views/OurCats.vue')
     }
   ]
 })
