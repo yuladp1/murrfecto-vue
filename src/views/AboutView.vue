@@ -16,6 +16,20 @@
     <p>Ми поєднуємо одних з другими, приймаючи від одних щомісячну допомогу, годуючи і лікуючи обраного вами кота і надсилаючи вам новини з досить бурхливого дворового котячого життя</p>
   </div>
 </div>
+<div class="about-us__info-wrapper">
+  <div class="info-item">
+    <figure><img src="../assets/about-us/icon-heart.png" alt=""></figure>
+    <p>Щоденно годуємо понад 20 котів</p>
+  </div>
+  <div class="info-item">
+    <figure><img src="../assets/about-us/icon-bag.png" alt=""></figure>
+    <p>Щомісяця витрачаємо  близько 24 000 грн</p>
+  </div>
+  <div class="info-item">
+    <figure><img src="../assets/about-us/icon-hands.png" alt=""></figure>
+    <p>Понад 7 років постійно годуємо стабільний прайд</p>
+  </div>
+</div>
       </section>
 </template>
 
@@ -41,7 +55,7 @@ padding: 100px 0;
 .content-item-wrapper:not(:last-child) {
   margin-bottom: 56px;
 }
-figure {
+.content-item-wrapper>figure {
   width: 32%;
   height: auto;
 }
@@ -51,5 +65,27 @@ p {
 font-size: 1.25rem;
 line-height: 1.88rem;
 text-align: center;
+}
+.about-us__info-wrapper {
+     display: flex;
+    flex-direction: row;
+       align-items: flex-start;
+    justify-content: center;
+    gap: 14%;
+    margin-bottom: 131px;
+}
+.info-item {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+      align-items: center;
+    justify-content: center;
+}
+.info-item>figure {
+  width: 100%;
+  height: auto;
+}
+.info-item>p {
+  width: 100%;
 }
 </style>

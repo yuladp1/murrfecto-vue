@@ -52,11 +52,15 @@ export default {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  row-gap: 20px;
 }
 .one-card__wrapper {
   width: 305px;
   height: 424px;
   position: relative;
+}
+.one-card__wrapper:hover {
+  cursor: url('../assets/icons/paw.svg'), pointer;
 }
 .front-card__wrapper,
 .back-card__wrapper {
@@ -136,5 +140,8 @@ img {
   text-align: center;
   font-weight: 600;
   font-size: 1.5rem;
+}
+.see-all-cats:hover {
+  cursor: url('../assets/icons/paw.svg'), pointer;
 }
 </style>

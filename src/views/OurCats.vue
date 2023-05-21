@@ -30,10 +30,14 @@
 
 <script>
 import { useCounterStore } from '../stores/counter'
+import { onMounted } from 'vue';
 export default {
   components: {},
   setup() {
     const counter = useCounterStore()
+    onMounted(() => {
+      window.scrollTo(0,0)
+    });
     return { counter }
   }
 }
@@ -58,11 +62,18 @@ h2 {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
+  padding: 100px 5%;
+  row-gap: 20px;
 }
 .one-card__wrapper {
   width: 305px;
   height: 424px;
   position: relative;
+
+  flex-wrap: wrap;
+}
+.one-card__wrapper:hover {
+  cursor: url('../assets/icons/paw.svg'), pointer;
 }
 .front-card__wrapper,
 .back-card__wrapper {
