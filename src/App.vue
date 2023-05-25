@@ -58,6 +58,8 @@ text-align: center;
 padding-bottom: 60px;
 }
 .nav__button {
+  display: flex;
+  justify-content: center;
   font-size: 1.5rem;
   text-transform: uppercase;
   line-height: 1.5rem;

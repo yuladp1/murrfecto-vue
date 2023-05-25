@@ -5,21 +5,23 @@
         <img class="navbar-item" src="../assets/icons/logo-murrfecto.svg" />
       </figure>
     </div>
-
-
-    <div class="nav__buttons">
-       <p  @click="router.push({ path: `/about` })">Про притулок</p>
-        <p  @click="router.push({ path: `/our-cats` })">
-          Наші хвости
-        </p>
-        <p @click="router.push({ path: `/contacts` })">
-          Контакти
-        </p>
-        <button class="nav__button" @click="router.push({ path: `/feed-the-cat` })">Задонатити</button>
+    <div class="wrapper-menu-button">
+      <div class="nav__buttons">
+        <p @click="router.push({ path: `/about` })">Про притулок</p>
+        <p @click="router.push({ path: `/our-cats` })">Наші хвости</p>
+        <p @click="router.push({ path: `/contacts` })">Контакти</p>
+      </div>
+      <button class="nav__button" @click="router.push({ path: `/feed-the-cat` })">
+        Задонатити
+      </button>
+   
     </div>
-
-
-  </nav>
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+       </nav>
 </template>
 
 <script>
@@ -39,39 +41,70 @@ export default {
 
 <style lang="scss" scoped>
 .nav__container {
-  margin: 0 80px;
+  width: 89%;
+  // margin: 0 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 9px 0;
+  margin: auto;
 }
 .nav__brand:hover {
-cursor: pointer;
+  cursor: pointer;
+}
+.wrapper-menu-button {
+  display: flex;
+  align-items: center;
+  gap: 48px;
 }
 .nav__buttons {
   display: flex;
-    justify-content: flex-end;
-  align-items: center;
-   flex: 1 1;
-   font-weight: 700;
+  gap: 24px;
+  font-weight: 700;
 }
-.nav__buttons>*:not(:last-child) {
-  margin: 0 24px;
-  border-bottom: 2px solid #F2F2F2;
-}
-.nav__buttons>*:not(:last-child):hover{
+.nav__button:hover {
   cursor: url('../assets/icons/paw.svg'), pointer;
-  border-bottom: 2px solid #4B3542;
+  border-bottom: 2px solid #4b3542;
+}
+.burger {
+  display: none;
 }
 
-@media screen and (max-width: 1050px) {
-  .nav__buttons>*:not(:last-child) {
-  padding: 0 10px;
-}
-}
 @media screen and (max-width: 900px) {
   .nav__container {
-margin: 0 20px;
+    width: 96%;
+  }
+  .wrapper-menu-button {
+    gap: 20px;
+  }
+  .nav__buttons {
+    gap: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav__container {
+    margin: 42px auto;
+  }
+  .nav__brand {
+    width: 19%;
+    height: auto;
+  }
+  .nav__buttons {
+    display: none;
+  }
+  .nav__button {
+    width: 270px;
+  }
+  .burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 16px;
+  span {
+    width: 100%;
+    border: 1px solid #4B3542;
+  }
 }
 }
 </style>

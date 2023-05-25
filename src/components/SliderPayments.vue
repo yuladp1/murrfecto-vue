@@ -1,5 +1,5 @@
 <template>
-<div class="donates__container">
+<section class="donates__container">
   <h2>Безпечний донат</h2>
     <div class="slider__container">
       <div class="slide active">
@@ -27,7 +27,13 @@
                 </div>
       </div>
     </div>
-  </div>
+  </section>
+  <section class="donates__container-tablet">
+    <h2>Безпечний донат</h2>
+<button class="nav__button">Одноразово</button>
+<button class="nav__button">Щомісячно</button>
+<button class="nav__button">Корм, ліки, іграшки</button>
+  </section>
 </template>
 
 <script>
@@ -147,4 +153,37 @@ padding: 8px 10px;
   transition: opacity 0.3s ease-in 0.4s;
   transition: width 0.3s;
 }
+.donates__container-tablet {
+  width: 96%;
+  margin: auto;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  background: #D0BEC4;
+  padding: 40px 0;
+h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 0 0 32px 0;
+}
+button {
+  width: 50%;
+  
+font-weight: 600;
+font-size: 1.25rem;
+text-transform: none;
+}
+
+}
+@media screen and (max-width: 900px) {
+  .donates__container {
+    display: none;
+  }
+  .donates__container-tablet {
+    display: flex;
+  }
+}
+
 </style>

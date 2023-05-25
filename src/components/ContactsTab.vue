@@ -30,7 +30,8 @@ export default {
 <style lang="scss" scoped>
 .container__all {
 font-size: 1rem;
-margin: 0 80px;
+width: 89%;
+margin: auto;
 padding: 20px 0;
 display: flex;
 justify-content: space-between;
@@ -74,7 +75,7 @@ a {
 }
 @media screen and (max-width: 900px) {
   .container__all {
-margin: 0 20px;
+    width: 96%;
 }
 .contacts {
     gap: 10px;
@@ -82,13 +83,9 @@ margin: 0 20px;
   }
 
 }
-@media  screen and (max-width: 500px) {
+@media  screen and (max-width: 768px) {
   .container__all {
-gap: 20px;
+display: none;
 }
-  .contacts {
-  flex-shrink: 1;
-  flex-wrap: wrap;
-  }
 }
 </style>

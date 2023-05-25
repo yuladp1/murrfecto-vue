@@ -46,9 +46,9 @@ export default {
 section {
   background-color: #515151;
   color: white;
-  width: 100%;
+  width: 89%;
   padding: 60px 80px;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-start;
@@ -83,5 +83,29 @@ margin-bottom: 20px;
 .footer__logo>figure>img {
 width: 100%;
 height: 100%;
+}
+@media screen and (max-width: 1200px) {
+  section {
+  padding: 60px 15px;
+  }
+}
+
+@media screen and (max-width: 900px)  {
+  section {
+    width: 96%;
+    flex-wrap: wrap;
+    column-gap: 60px;
+    row-gap: 40px;
+  }
+  .footer__social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer__social-icons>*:not(:last-child) {
+margin-bottom: 0;
+}
+
 }
 </style>

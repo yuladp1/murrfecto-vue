@@ -43,7 +43,8 @@ export default {
 
 <style scoped>
 .cards-section__container {
-  margin: 0 80px;
+  width: 89%;
+  margin: auto;
   padding-top: 120px;
 }
 .all-cards__wrapper {
@@ -143,5 +144,18 @@ img {
 }
 .see-all-cats:hover {
   cursor: url('../assets/icons/paw.svg'), pointer;
+}
+@media screen and (max-width: 900px) {
+  .cards-section__container {
+  width: 96%;
+  padding-top: 80px;
+}
+.all-cards__wrapper {
+  gap: 20px;
+}
+
+.one-card__wrapper {
+  flex: 1 1 350px;
+ }
 }
 </style>

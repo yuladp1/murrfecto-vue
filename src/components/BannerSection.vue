@@ -24,6 +24,8 @@ export default {
   position: relative;
   display: flex;
     justify-content: center;
+    width: 89%;
+    margin: auto;
 }
 .banner__text {
   position: absolute;
@@ -35,5 +37,12 @@ padding: 0 20px;
 }
 figure {
   flex: 1 1;
+}
+@media screen and (max-width: 900px) {
+  
+.banner__container {
+  width: 96%;
+  height: auto;
+}
 }
 </style>

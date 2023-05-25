@@ -25,12 +25,18 @@ section {
   padding-top: 120px;
   font-weight: 400;
 font-size: 1.25rem;
+width: 100%;
+}
+h2 {
+  padding: 0 10%;
+  line-height: 3.44rem;
 }
 form {
   display: flex;
   justify-items: center;
   justify-content: center;
   padding-bottom: 100px;
+  width: 90%;
 }
 p {
   font-weight: 400;

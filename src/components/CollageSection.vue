@@ -59,11 +59,11 @@ export default {
 <style lang="scss" scoped>
 .collage__container {
   display: flex;
-  margin: 0 80px;
+  width: 89%;
+  margin: auto;
   padding-top: 7.5rem;
 }
 
-.collage__images,
 .collage__text {
   flex: 1 1 45%;
   flex-direction: column;
@@ -71,7 +71,7 @@ export default {
 .collage__images {
   position: relative;
   height: 656px;
-  width: 652px;
+  flex: 0 0 652px;
 
 }
 .collage__image-1 {
@@ -137,9 +137,31 @@ left: 45%;
 .collage__text > ul > li:not(:last-child) {
   margin-bottom: 40px;
 }
+
+@media screen and (max-width: 1154px) {
+  .collage__images {
+height: 580px;
+    flex: 0 0 500px;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .collage__container {
-    margin: 0 20px;
+    width: 96%;
+    padding-top: 80px;
+  }
+  .collage__images {
+    display: none;
+    width: 0;
+  }
+  .collage__text {
+    width: 70%;
+    ul {
+      width: 70%;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    }
   }
 }
 </style>

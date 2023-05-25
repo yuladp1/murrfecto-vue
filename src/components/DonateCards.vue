@@ -54,23 +54,24 @@ export default {
 <style lang="scss" scoped>
 .donate-cards__container {
   padding-top: 120px;
-  margin: 0 80px;
+  width: 89%;
+  margin: auto;
 }
 .cards__container {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
- }
+}
 .card-donate {
   width: 32%;
-  border: 2px solid #D0BEC4;
-border-radius: 12px;
-display: flex;
-    flex-direction: column;
+  border: 2px solid #d0bec4;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 figure {
   width: 55%;
-  margin:auto;
+  margin: auto;
 }
 .donate-img-container {
   background-color: white;
@@ -83,45 +84,42 @@ img:hover {
   cursor: grab;
 }
 .cards__text {
- min-height: 166px;
-  background-color: #D0BEC4;
+  min-height: 166px;
+  background-color: #d0bec4;
   display: flex;
   flex-direction: column;
   align-items: center;
- }
- .cards__text>h3 {
+}
+.cards__text > h3 {
   display: flex;
   font-weight: 600;
-font-size: 2rem;
-margin: 16px 0 8px 0;
-text-align: center;
+  font-size: 2rem;
+  margin: 16px 0 8px 0;
+  text-align: center;
 }
-.cards__text>p {
+.cards__text > p {
   font-weight: 400;
-font-size: 1.25rem;
-margin: 0 8%;
-line-height: 1.88rem;
-text-align: center;
+  font-size: 1.25rem;
+  margin: 0 8%;
+  line-height: 1.88rem;
+  text-align: center;
 }
 @media screen and (max-width: 900px) {
   .donate-cards__container {
-margin: 0 20px;
-}
-}
-@media screen and (max-width: 1000px) {
+    width: 96%;
+    padding-top: 83px;
+  }
   .cards__container {
-  display: flex;
-flex-direction: column;
-align-items: center;
- }
- .cards__container>*:not(:last-child) {
-  margin-bottom: 20px;
- }
- figure {
-  width: 35%;
-}
-.card-donate {
-  width: 90%;
-}
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-donate {
+width: 54%;
+  }
+  figure {
+    width: 35%;
+  }
 }
 </style>

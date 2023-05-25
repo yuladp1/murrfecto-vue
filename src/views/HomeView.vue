@@ -1,4 +1,5 @@
 <template>
+  <!-- <donate-modal/> -->
   <BannerSection/>
   <CollageSection/>
   <DonateCards/>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+// import DonateModal from '../components/DonateModal.vue';
 import BannerSection from '../components/BannerSection.vue';
 import CollageSection from '../components/CollageSection.vue';
 import DonateCards from '../components/DonateCards.vue';
@@ -17,6 +19,7 @@ import NewsSubscriber from '../components/NewsSubscriber.vue'
 export default {
   name: "HomeView",
   components: {
+    // DonateModal,
     BannerSection,
     CollageSection,
     DonateCards,
