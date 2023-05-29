@@ -51,16 +51,20 @@ a {
   gap: 34px;
 }
 .contacts__email::before {
-    background:url('../assets/icons/email-icon.svg') ;
-     width: 20px;
-  height: 16px; 
+  content: '' ;
+ background:url('../assets/icons/email-icon.svg') ;
+ background-size: contain;
+     width: 24px;
+  height: 24px; 
   margin-right: 8px;
 }
 .contacts__phone::before {
+  content: '';
   background:url('../assets/icons/phone-icon.svg') ;
-  width: 20px;
+  background-size: contain;
+  width: 24px;
   height: 24px;
-  margin-right: 14px;
+  margin-right: 8px;
 }
 .contacts__email::before, .contacts__phone::before {
   content: '';

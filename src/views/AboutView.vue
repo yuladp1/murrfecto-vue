@@ -48,6 +48,24 @@
   </section>
 </template>
 
+<script>
+import { useCounterStore } from '../stores/counter'
+import { onMounted } from 'vue';
+export default {
+  name: "AboutView",
+  created() {},
+  data() {
+    const base = useCounterStore()
+    onMounted(() => {
+      window.scrollTo(0,0)
+    });
+    return {base};
+  },
+  props: {},
+  methods: {},
+};
+</script>
+
 <style lang="scss" scoped>
 .about-us__header {
   background-color: #d0bec4;

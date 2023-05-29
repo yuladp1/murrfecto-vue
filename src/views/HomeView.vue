@@ -1,40 +1,37 @@
 <template>
   <!-- <donate-modal/> -->
-  <BannerSection/>
-  <CollageSection/>
-  <DonateCards/>
-<CardsSection/>
-  <SliderPayments/>
-  <NewsSubscriber/>
+  <BannerSection />
+  <CollageSection />
+  <DonateCards />
+  <CardsSection />
+  <SliderPayments />
+  <NewsSubscriber />
 </template>
 
 <script>
-// import DonateModal from '../components/DonateModal.vue';
-import BannerSection from '../components/BannerSection.vue';
-import CollageSection from '../components/CollageSection.vue';
-import DonateCards from '../components/DonateCards.vue';
-import CardsSection from '../components/CardsSection.vue' 
-import SliderPayments from '../components/SliderPayments.vue';
+import BannerSection from '../components/BannerSection.vue'
+import CollageSection from '../components/CollageSection.vue'
+import DonateCards from '../components/DonateCards.vue'
+import CardsSection from '../components/CardsSection.vue'
+import SliderPayments from '../components/SliderPayments.vue'
 import NewsSubscriber from '../components/NewsSubscriber.vue'
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
-    // DonateModal,
     BannerSection,
     CollageSection,
     DonateCards,
     CardsSection,
     SliderPayments,
     NewsSubscriber
-
   },
   created() {},
   data() {
-    return {};
+    return {}
   },
   props: {},
-  methods: {},
-};
+  methods: {}
+}
 </script>
 
 <style lang="scss" scoped></style>

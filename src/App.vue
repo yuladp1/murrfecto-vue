@@ -1,10 +1,12 @@
 <script>
 import { useCounterStore } from './stores/counter'
+import DropdownMenu from './components/DropdownMenu.vue'
 import ContactsTab from './components/ContactsTab.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
 import FooterSection from './components/FooterSection.vue'
 export default {
   components: {
+    DropdownMenu,
     ContactsTab,
        HeaderMenu,
        FooterSection
@@ -18,6 +20,7 @@ export default {
 
 <template>
   <div class="__container-all">
+    <DropdownMenu/>
     <div>
       <ContactsTab/>
     </div>
@@ -45,6 +48,9 @@ export default {
   font-size: 1rem;
   font-family: 'Nunito Sans', sans-serif;
   color: #3D4756;
+}
+.__container-all {
+  position: relative;
 }
 img {
   width: 100%;

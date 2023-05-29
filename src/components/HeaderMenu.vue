@@ -7,34 +7,54 @@
     </div>
     <div class="wrapper-menu-button">
       <div class="nav__buttons">
-        <p @click="router.push({ path: `/about` })">Про притулок</p>
-        <p @click="router.push({ path: `/our-cats` })">Наші хвости</p>
-        <p @click="router.push({ path: `/contacts` })">Контакти</p>
+        <p
+          @click="base.closeModalAndNavigate('/about')"
+   
+        >
+          Про притулок
+        </p>
+        <p
+          @click="base.closeModalAndNavigate('/our-cats')"
+             
+        >
+          Наші хвости
+        </p>
+        <p
+          @click="base.closeModalAndNavigate('/contacts')"
+    
+        >
+          Контакти
+        </p>
       </div>
       <button class="nav__button" @click="router.push({ path: `/feed-the-cat` })">
-        Задонатити
+        Нагодуй кота
       </button>
-   
     </div>
-    <div class="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-       </nav>
+    <div class="burger" @click="base.showModalDropdown = true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCounterStore } from '../stores/counter'
 export default {
   setup() {
     const base = useCounterStore()
     const router = useRouter()
-    onMounted(() => {})
+    const activeMenuItem = ref('')
 
-    return { base: ref(base), router }
+    onMounted(() => {
+      nextTick(() => {
+
+      })
+    })
+
+    return { base, router, activeMenuItem }
   }
 }
 </script>
@@ -62,12 +82,23 @@ export default {
   gap: 24px;
   font-weight: 700;
 }
-.nav__button:hover {
-  cursor: url('../assets/icons/paw.svg'), pointer;
+.nav__buttons > p {
+  border-bottom: 2px solid #f2f2f2;
+}
+.nav__buttons > p:hover {
+  cursor: pointer;
   border-bottom: 2px solid #4b3542;
 }
 .burger {
   display: none;
+  width: 32px;
+  height: 32px;
+}
+.burger:hover {
+  cursor: pointer;
+}
+.active {
+  border-bottom: 2px solid #4b3542;
 }
 
 @media screen and (max-width: 900px) {
@@ -96,15 +127,13 @@ export default {
     width: 270px;
   }
   .burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 16px;
-  span {
-    width: 100%;
-    border: 1px solid #4B3542;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    span {
+      width: 100%;
+      border: 1px solid #4b3542;
+    }
   }
-}
 }
 </style>

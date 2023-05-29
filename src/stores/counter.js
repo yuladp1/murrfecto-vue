@@ -1,10 +1,12 @@
 import { defineStore } from 'pinia'
+import { ref } from 'vue';
 import { useRouter } from "vue-router";
 
 export const useCounterStore = defineStore('counter',{
   state: () => ({
      router: useRouter(),
-     catsArray: [
+     showModalDropdown: ref(false),
+      catsArray: [
       {
           "ID": "Padre",
           "CatsName": "Падре",
@@ -147,5 +149,16 @@ export const useCounterStore = defineStore('counter',{
         this.router.push({ name: "OneCat", params: { id: itemid } });
         window.scrollTo(0,0);
       },
+      closeModalAndNavigate(path) {
+        const navButtons = document.querySelectorAll('p');
+        navButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+                navButtons.forEach((btn) => btn.classList.remove('active'))
+                button.classList.add('active')
+          })
+        })
+        this.showModalDropdown = false; 
+           this.router.push({ path }); 
+      }
     }
 })
