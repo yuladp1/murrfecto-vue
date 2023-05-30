@@ -1,12 +1,14 @@
 <script>
 import { useCounterStore } from './stores/counter'
 import DropdownMenu from './components/DropdownMenu.vue'
+import DonateModal from './components/DonateModal.vue'
 import ContactsTab from './components/ContactsTab.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
 import FooterSection from './components/FooterSection.vue'
 export default {
   components: {
     DropdownMenu,
+    DonateModal,
     ContactsTab,
        HeaderMenu,
        FooterSection
@@ -21,6 +23,7 @@ export default {
 <template>
   <div class="__container-all">
     <DropdownMenu/>
+    <DonateModal/>
     <div>
       <ContactsTab/>
     </div>
@@ -73,5 +76,9 @@ padding-bottom: 60px;
   color: white;
   background-color:#4B3542 ;
   border-radius: 8px;
+}
+.nav__button:hover {
+  color: #4B3542;
+  background-color: #D0BEC4;
 }
 </style>

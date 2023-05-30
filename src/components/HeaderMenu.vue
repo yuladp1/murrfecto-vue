@@ -26,7 +26,7 @@
           Контакти
         </p>
       </div>
-      <button class="nav__button" @click="router.push({ path: `/feed-the-cat` })">
+      <button class="nav__button" @click="base.showModalDonate=true">
         Нагодуй кота
       </button>
     </div>
@@ -50,11 +50,10 @@ export default {
 
     onMounted(() => {
       nextTick(() => {
-
-      })
+             })
     })
 
-    return { base, router, activeMenuItem }
+    return { base, router, activeMenuItem}
   }
 }
 </script>

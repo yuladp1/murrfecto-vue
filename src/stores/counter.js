@@ -6,6 +6,7 @@ export const useCounterStore = defineStore('counter',{
   state: () => ({
      router: useRouter(),
      showModalDropdown: ref(false),
+     showModalDonate: ref(false),
       catsArray: [
       {
           "ID": "Padre",

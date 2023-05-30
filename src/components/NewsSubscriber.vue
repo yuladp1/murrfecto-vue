@@ -59,5 +59,12 @@ button {
   background-color: white;
   border: 3px solid #4B3542;
 border-radius: 8px;
+font-weight: 700;
+font-size: 1rem;
+ color: #4B3542;
+}
+button:hover {
+  background-color: #D0BEC4;
+ 
 }
 </style>
