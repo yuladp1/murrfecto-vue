@@ -28,15 +28,21 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import { useCounterStore } from '../stores/counter'
 import { useRouter } from 'vue-router'
+
 export default {
   components: {},
   setup() {
     const counter = useCounterStore()
     const router = useRouter()
-    const someCats = counter.catsArray.slice(0,4);
-    return { counter, router, someCats }
+    const someCats = computed(() => counter.catsArray.slice(0, 4))
+    return {
+      counter,
+      router,
+      someCats
+    }
   }
 }
 </script>
@@ -147,15 +153,15 @@ img {
 }
 @media screen and (max-width: 900px) {
   .cards-section__container {
-  width: 96%;
-  padding-top: 80px;
-}
-.all-cards__wrapper {
-  gap: 20px;
-}
+    width: 96%;
+    padding-top: 80px;
+  }
+  .all-cards__wrapper {
+    gap: 20px;
+  }
 
-.one-card__wrapper {
-  flex: 1 1 350px;
- }
+  .one-card__wrapper {
+    flex: 1 1 350px;
+  }
 }
 </style>

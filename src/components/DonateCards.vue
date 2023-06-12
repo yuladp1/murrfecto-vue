@@ -41,13 +41,7 @@
 
 <script>
 export default {
-  name: 'DonateCards',
-  created() {},
-  data() {
-    return {}
-  },
-  props: {},
-  methods: {}
+  name: 'DonateCards'
 }
 </script>
 
@@ -116,7 +110,7 @@ img:hover {
     align-items: center;
   }
   .card-donate {
-width: 54%;
+    width: 54%;
   }
   figure {
     width: 35%;

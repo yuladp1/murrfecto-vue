@@ -1,70 +1,71 @@
 <template>
-  <section class="donate-modal" v-show="base.showModalDonate">
+  <Teleport to="body" />
+   <section class="donate-modal" v-show="base.showModalDonate">
     <figure><img src="../assets/modals/kitten.png" alt="" /></figure>
     <div class="donates-wrapper">
       <p>Зібрані кошти підуть на харчування та медичну допомогу</p>
-      <div class="tab">
-        <button class="tablinks" @click="openTab(event, 'once')">Одноразово</button>
-        <button class="tablinks" @click="openTab(event, 'monthly')">Щомісячно</button>
+      <div class="tabs">
+        <button :class="{ active: isActiveTab === 1 }" @click="this.addActiveTab(1)">
+          Одноразово
+        </button>
+        <button :class="{ active: isActiveTab === 2 }" @click="this.addActiveTab(2)">
+          Щомісячно
+        </button>
       </div>
-
-      <!-- Tab content -->
-      <div id="once" class="tabcontent">
-        <button class="sum20">20</button>
-        <button class="sum50">50</button>
-        <button class="sum100">100</button>
-        <button class="sum200">200</button>
-        <input class="other"/>
-      </div>
-
-      <div id="monthly" class="tabcontent">
-        <h3>monthly</h3>
-        <p>monthly</p>
+      <div class="tabcontent">
+        <button class="sum20" @click="this.sum = 20">20</button>
+        <button class="sum50" @click="this.sum = 50">50</button>
+        <button class="sum100" @click="this.sum = 100">100</button>
+        <button class="sum200" @click="this.sum = 200">200</button>
+        <input class="other" v-model="this.sum" :placeholder="this.sum" />
       </div>
       <p>Допомогти конкретному котику</p>
       <select v-model="selectedCat">
         <option selected>Оберіть пухнастика</option>
-  <option v-for="cat in base.catsArray" :key="cat.ID" :value="cat.value">
-    {{ cat.CatsName }}
-  </option>
-</select>
-<button class="nav__button">Допомогти</button>
-
+        <option v-for="cat in base.catsArray" :key="cat.ID" :value="cat.value">
+          {{ cat.CatsName }}
+        </option>
+      </select>
+      <button class="nav__button" onclick="this.createOrder(this.sum,cat.value)">Допомогти</button>
     </div>
   </section>
+  <Teleport />
 </template>
 
 <script>
+import { ref } from 'vue'
 import { useCounterStore } from '../stores/counter'
 export default {
   name: 'DonateModal',
-  created() {},
+  components: {},
   data() {
     const base = useCounterStore()
-    function openTab(evt, cityName) {
-      // Declare all variables
-      var i, tabcontent, tablinks
-
-      // Get all elements with class="tabcontent" and hide them
-      tabcontent = document.getElementsByClassName('tabcontent')
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = 'none'
-      }
-
-      // Get all elements with class="tablinks" and remove the class "active"
-      tablinks = document.getElementsByClassName('tablinks')
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(' active', '')
-      }
-
-      // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(cityName).style.display = 'block'
-      evt.currentTarget.className += ' active'
+    const sum = ref('')
+    const isActiveTab = ref('1')
+    return {
+      base,
+      sum,
+      isActiveTab
     }
-    return { openTab, base }
   },
-  props: {},
-  methods: {}
+  methods: {
+    addActiveTab(param) {
+      this.isActiveTab = param
+    },
+    createOrder(amount, order_desc) {
+      var button = window.$ipsp.get('.nav__button')
+      button.setMerchantId(1396424)
+      button.setAmount(amount, 'UAH')
+      button.setResponseUrl('http://example.com/result/')
+      button.setHost('pay.fondy.eu')
+      button.addField({
+        label: 'Допомога для {cat.value}',
+        name: 'order_desc',
+        value: order_desc
+      })
+      location.href = button.getUrl()
+    }
+  }
 }
 </script>
 
@@ -82,59 +83,69 @@ section {
 }
 
 figure {
-   height: 100%;
+  height: 100%;
   background: #4b3542;
   flex: 0 0 38%;
+}
+p {
+  margin: 40px -40px 24px -40px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  // color: #3D4756;
 }
 .donates-wrapper {
   width: 41%;
   height: 100%;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 }
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+.tabs {
+  width: 100%;
+  display: flex;
+  border: 2px solid #4b3542;
+  border-radius: 8px;
 }
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
+.tabs button {
   transition: 0.3s;
+  width: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background: white;
+  color: #4b3542;
+  padding: 9px 0;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+.tabs button.active {
+  background: #4B3542;
+  color: white;
 }
-
-/* Style the tab content */
 .tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-#once {
+  margin: 16px 0;
+  width: 100%;
   display: grid;
   grid-template-areas:
     '20 50 100'
     '200  other other';
-    grid-template-rows: 50px 1fr 30px;
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 42px 42px;
-  grid-column-gap: 10px;
-				grid-row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 42px 42px;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
+.tabcontent>* {
+border: 1px solid #4B3542;
+border-radius: 8px;
+font-weight: 400;
+font-size: 1.25rem;
+line-height: 1.88rem;
+color: #4B3542;
+background-color: white;
+}
+
 .other {
   grid-area: other;
 }

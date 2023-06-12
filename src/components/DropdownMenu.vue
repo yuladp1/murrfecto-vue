@@ -1,11 +1,11 @@
 <template>
   <nav v-show="base.showModalDropdown">
-    <div class="closeModal" @click="base.showModalDropdown=false" ></div>
+    <div class="closeModal" @click="base.showModalDropdown = false"></div>
     <div class="nav__buttons">
       <p @click="base.closeModalAndNavigate('/about')">Про притулок</p>
       <p @click="base.closeModalAndNavigate(`/our-cats`)">Наші хвости</p>
       <p @click="base.closeModalAndNavigate(`/contacts`)">Контакти</p>
-          </div>
+    </div>
     <div class="social-media">
       <figure>
         <img src="../assets/icons/socials.svg" alt="" />
@@ -24,16 +24,17 @@
 <script>
 import { useRouter } from 'vue-router'
 import { useCounterStore } from '../stores/counter'
+
 export default {
   name: 'DropdownMenu',
-  created() {},
-  data() {
+  setup() {
     const router = useRouter()
     const base = useCounterStore()
-    return { base, router }
-  },
-  props: {},
-  methods: {}
+    return {
+      base,
+      router
+    }
+  }
 }
 </script>
 
@@ -61,7 +62,7 @@ nav {
   display: block;
   width: 32px;
   height: 3px;
-  background: #4B3542;
+  background: #4b3542;
 }
 
 .closeModal::before {
@@ -86,9 +87,9 @@ nav {
     border-bottom: 2px solid #f2f2f2;
   }
   p:hover {
-  cursor: pointer;
-  border-bottom: 2px solid #4b3542;
-}
+    cursor: pointer;
+    border-bottom: 2px solid #4b3542;
+  }
 }
 .social-media {
   width: 50%;

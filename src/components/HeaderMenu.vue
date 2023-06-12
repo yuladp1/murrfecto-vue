@@ -7,28 +7,11 @@
     </div>
     <div class="wrapper-menu-button">
       <div class="nav__buttons">
-        <p
-          @click="base.closeModalAndNavigate('/about')"
-   
-        >
-          Про притулок
-        </p>
-        <p
-          @click="base.closeModalAndNavigate('/our-cats')"
-             
-        >
-          Наші хвости
-        </p>
-        <p
-          @click="base.closeModalAndNavigate('/contacts')"
-    
-        >
-          Контакти
-        </p>
+        <p @click="base.closeModalAndNavigate('/about')">Про притулок</p>
+        <p @click="base.closeModalAndNavigate('/our-cats')">Наші хвости</p>
+        <p @click="base.closeModalAndNavigate('/contacts')">Контакти</p>
       </div>
-      <button class="nav__button" @click="base.showModalDonate=true">
-        Нагодуй кота
-      </button>
+      <button class="nav__button" @click="base.showModalDonate = true">Нагодуй кота</button>
     </div>
     <div class="burger" @click="base.showModalDropdown = true">
       <span></span>
@@ -39,21 +22,13 @@
 </template>
 
 <script>
-import { ref, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCounterStore } from '../stores/counter'
 export default {
   setup() {
     const base = useCounterStore()
     const router = useRouter()
-    const activeMenuItem = ref('')
-
-    onMounted(() => {
-      nextTick(() => {
-             })
-    })
-
-    return { base, router, activeMenuItem}
+    return { base, router }
   }
 }
 </script>

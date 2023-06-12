@@ -1,4 +1,5 @@
 <script>
+import { onMounted } from 'vue'
 import { useCounterStore } from './stores/counter'
 import DropdownMenu from './components/DropdownMenu.vue'
 import DonateModal from './components/DonateModal.vue'
@@ -15,12 +16,15 @@ export default {
    },
   setup() {
     const base = useCounterStore()
+    onMounted(() => {
+         });
     return { base }
   }
 }
 </script>
 
 <template>
+  
   <div class="__container-all">
     <DropdownMenu/>
     <DonateModal/>

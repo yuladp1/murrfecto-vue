@@ -40,30 +40,30 @@
     </div>
     <div class="about__documents">
       <div class="pdf-wrapper">
-         <a href="">Звітність</a>  
+        <a href="">Звітність</a>
         <div class="pdf">PDF</div>
       </div>
-      <div >Ми офіційно зареєстрована некомерційна організація і звітуємо про свою діяльність</div>
+      <div>Ми офіційно зареєстрована некомерційна організація і звітуємо про свою діяльність</div>
     </div>
   </section>
 </template>
 
 <script>
+import { onMounted } from 'vue'
 import { useCounterStore } from '../stores/counter'
-import { onMounted } from 'vue';
+
 export default {
-  name: "AboutView",
-  created() {},
-  data() {
+  name: 'AboutView',
+  setup() {
     const base = useCounterStore()
     onMounted(() => {
-      window.scrollTo(0,0)
-    });
-    return {base};
-  },
-  props: {},
-  methods: {},
-};
+      window.scrollTo(0, 0)
+    })
+    return {
+      base
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -151,9 +151,9 @@ p {
   top: 25px;
   right: 0;
   padding: 5px 30px;
-  background: #D0BEC4;
+  background: #d0bec4;
   font-weight: 600;
-font-size: 1rem;
-line-height: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 </style>

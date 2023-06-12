@@ -30,14 +30,14 @@
 
 <script>
 import { useCounterStore } from '../stores/counter'
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 export default {
   components: {},
   setup() {
     const counter = useCounterStore()
     onMounted(() => {
-      window.scrollTo(0,0)
-    });
+      window.scrollTo(0, 0)
+    })
     return { counter }
   }
 }
@@ -45,7 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .our-cats__header {
-  background-color: #D0BEC4;
+  background-color: #d0bec4;
   width: 100%;
   padding: 93px 0;
 }

@@ -24,21 +24,17 @@
       <h2>Хто ми</h2>
       <ul>
         <li>
-          Притулок Murrfecto в Києві опікується котами, які поруч з нами переживають
-          буремні часи.
+          Притулок Murrfecto в Києві опікується котами, які поруч з нами переживають буремні часи.
         </li>
         <li>
-          Наш притулок має близько 20 хвостів, що живуть поруч. Прайд підтримується
-          стабільною сумою коштів з місяця в місяць.
+          Наш притулок має близько 20 хвостів, що живуть поруч. Прайд підтримується стабільною сумою
+          коштів з місяця в місяць.
         </li>
         <li>
-          Коти стійко переносять все, що випадає на їхню нелегку котячу долю в цей час,
-          але в наших силах щоденно їх погодувати і почухати за вухом.
+          Коти стійко переносять все, що випадає на їхню нелегку котячу долю в цей час, але в наших
+          силах щоденно їх погодувати і почухати за вухом.
         </li>
-        <li>
-          Запрошуємо тебе стати віртуальним володарем справжнього кота. І він тобі
-          віддячить!
-        </li>
+        <li>Запрошуємо тебе стати віртуальним володарем справжнього кота. І він тобі віддячить!</li>
       </ul>
     </div>
   </section>
@@ -46,14 +42,8 @@
 
 <script>
 export default {
-  name: "CollageSection",
-  created() {},
-  data() {
-    return {};
-  },
-  props: {},
-  methods: {},
-};
+  name: 'CollageSection'
+}
 </script>
 
 <style lang="scss" scoped>
@@ -72,21 +62,20 @@ export default {
   position: relative;
   height: 656px;
   flex: 0 0 652px;
-
 }
 .collage__image-1 {
   position: absolute;
   width: 49%;
   height: auto;
- top: 0;
- left: 0;
+  top: 0;
+  left: 0;
 }
 .collage__image-2 {
   position: absolute;
   width: 38%;
   height: auto;
-top: 24px;
-left: 45%;
+  top: 24px;
+  left: 45%;
 }
 .collage__image-3 {
   position: absolute;
@@ -131,7 +120,7 @@ left: 45%;
   display: flex;
 }
 .collage__text > ul > li::before {
-  content: url("../assets/icons/paw.svg");
+  content: url('../assets/icons/paw.svg');
   padding-right: 12px;
 }
 .collage__text > ul > li:not(:last-child) {
@@ -140,7 +129,7 @@ left: 45%;
 
 @media screen and (max-width: 1154px) {
   .collage__images {
-height: 580px;
+    height: 580px;
     flex: 0 0 500px;
   }
 }
@@ -158,9 +147,9 @@ height: 580px;
     width: 70%;
     ul {
       width: 70%;
-    display: flex;
-    align-items: center;
-    margin: auto;
+      display: flex;
+      align-items: center;
+      margin: auto;
     }
   }
 }

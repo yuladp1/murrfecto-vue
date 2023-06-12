@@ -35,20 +35,20 @@
 </template>
 
 <script>
-import { useCounterStore } from '../stores/counter'
 import { onMounted } from 'vue'
+import { useCounterStore } from '../stores/counter'
+
 export default {
   name: 'FooterSection',
-  created() {},
-  data() {
+  setup() {
     const base = useCounterStore()
     onMounted(() => {
       window.scrollTo(0, 0)
     })
-    return { base }
-  },
-  props: {},
-  methods: {}
+    return {
+      base
+    }
+  }
 }
 </script>
 
@@ -60,7 +60,7 @@ section {
   padding: 60px 80px;
   margin: 0 auto;
   display: flex;
- flex-direction: column;
+  flex-direction: column;
   // flex-wrap: nowrap;
   // align-items: flex-start;
   // justify-content: space-between;

@@ -15,7 +15,7 @@
         <div class="field-name">Стать:</div>
         <div class="field-value sex">{{ this.cat.sex }}</div>
         <div class="field-name">Вік:</div>
-        <div class="field-value age" >{{ this.cat.age }}</div>
+        <div class="field-value age">{{ this.cat.age }}</div>
         <div class="field-name">Наявність чіпа:</div>
         <div class="field-value chip">{{ this.cat.chip }}</div>
         <div class="field-name cat-info">Інформація</div>
@@ -45,7 +45,6 @@ export default {
   setup(props) {
     const counter = useCounterStore()
     const cat = computed(() => counter.catsArray.find((c) => c.ID === props.id))
-
     onMounted(() => {
       window.scrollTo(0, 0)
     })
@@ -136,17 +135,17 @@ h3 {
   width: auto;
   height: auto;
   display: flex;
- }
- .age::after {
+}
+.age::after {
   content: url('../assets/one-cat/shedulle-small.svg');
   width: auto;
   height: auto;
   display: flex;
- }
- .chip::after {
+}
+.chip::after {
   content: url('../assets/one-cat/rounded-small.svg');
   width: auto;
   height: auto;
   display: flex;
- }
+}
 </style>

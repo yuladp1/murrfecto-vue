@@ -6,7 +6,7 @@
 
     <div class="contacts__wrapper">
       <div class="contacts">
-        <div class="contacts__phone">
+        <div class="contacts__phone-email">
           <div class="contacts">
             <p class="contacts__email"><a href="">sanders@example.com</a></p>
             <p class="contacts__phone"><a href="tel:(505)5550125">(505)5550125</a></p>
@@ -30,14 +30,14 @@
         <h3>Зворотний зв’язок</h3>
         <p>Якщо у Вас є запитання або пропозиції, напишіть нам</p>
         <form action="">
-        <label for="">Ім’я</label>
-        <input v-model="text" />
-        <label for="">Електронна адреса</label>
-        <input v-model="email" type="email" class="email"/>
-        <label for="">Повідомлення</label>
-        <textarea v-model="message" type="text" />
-        <button class="nav__button">Надіслати</button>
-      </form>
+          <label for="">Ім’я</label>
+          <input v-model="text" />
+          <label for="">Електронна адреса</label>
+          <input v-model="email" type="email" class="email" />
+          <label for="">Повідомлення</label>
+          <textarea v-model="message" type="text" />
+          <button class="nav__button">Надіслати</button>
+        </form>
       </div>
     </div>
   </section>
@@ -45,13 +45,7 @@
 
 <script>
 export default {
-  name: 'OurContacts',
-  created() {},
-  data() {
-    return {}
-  },
-  props: {},
-  methods: {}
+  name: 'OurContacts'
 }
 </script>
 <style lang="scss" scoped>
@@ -66,7 +60,6 @@ export default {
 h2 {
   padding-bottom: 0;
 }
-
 .contacts__wrapper {
   display: flex;
   align-items: center;
@@ -86,10 +79,11 @@ h2 {
   border: 0.5px solid #4b3542;
   border-radius: 8px;
 }
-.contacts__email {
+.contacts__email, .contacts__phone {
   display: block;
 }
 .contacts__email::before {
+  display: block;
   content: '';
   background: url('../assets/icons/email-icon.svg');
   width: 20px;
@@ -97,6 +91,7 @@ h2 {
   margin-right: 8px;
 }
 .contacts__phone::before {
+display: block;
   content: '';
   background: url('../assets/icons/phone-icon.svg');
   width: 20px;
@@ -123,12 +118,13 @@ h2 {
 }
 label {
   font-weight: 400;
-  font-size: 1.25rem ;
-line-height: 1.88rem ;
+  font-size: 1.25rem;
+  line-height: 1.88rem;
 }
-input, textarea {
-  background: #F2F2F2;
-  border: 0.5px solid #AEAEAE;
+input,
+textarea {
+  background: #f2f2f2;
+  border: 0.5px solid #aeaeae;
   width: 100%;
 }
 textarea {
