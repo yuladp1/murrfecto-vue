@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body" />
-   <section class="donate-modal" v-show="base.showModalDonate">
+  <section class="donate-modal" v-show="base.showModalDonate" ref="target">
     <figure><img src="../assets/modals/kitten.png" alt="" /></figure>
     <div class="donates-wrapper">
       <p>Зібрані кошти підуть на харчування та медичну допомогу</p>
@@ -35,17 +35,22 @@
 <script>
 import { ref } from 'vue'
 import { useCounterStore } from '../stores/counter'
+import { onClickOutside } from '@vueuse/core'
 export default {
   name: 'DonateModal',
-  components: {},
-  data() {
+  setup() {
     const base = useCounterStore()
     const sum = ref('')
     const isActiveTab = ref('1')
+    const target = ref(null)
+    onClickOutside(target, () => {
+      base.showModalDonate = false
+    })
     return {
       base,
       sum,
-      isActiveTab
+      isActiveTab,
+      target
     }
   },
   methods: {
@@ -121,7 +126,7 @@ p {
 }
 
 .tabs button.active {
-  background: #4B3542;
+  background: #4b3542;
   color: white;
 }
 .tabcontent {
@@ -131,19 +136,19 @@ p {
   grid-template-areas:
     '20 50 100'
     '200  other other';
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 42px 42px;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 42px 42px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
-.tabcontent>* {
-border: 1px solid #4B3542;
-border-radius: 8px;
-font-weight: 400;
-font-size: 1.25rem;
-line-height: 1.88rem;
-color: #4B3542;
-background-color: white;
+.tabcontent > * {
+  border: 1px solid #4b3542;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.88rem;
+  color: #4b3542;
+  background-color: white;
 }
 
 .other {

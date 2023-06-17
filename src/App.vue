@@ -80,9 +80,11 @@ padding-bottom: 60px;
   color: white;
   background-color:#4B3542 ;
   border-radius: 8px;
+  transition: background 0.25s ease-in;
 }
 .nav__button:hover {
   color: #4B3542;
   background-color: #D0BEC4;
+  transition: background 0.35s ease-out;
 }
 </style>

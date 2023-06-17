@@ -110,10 +110,11 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
-  section {
+  section,
+  .wrapper {
     width: 96%;
     flex-wrap: wrap;
-    column-gap: 60px;
+    // column-gap: 60px;
     row-gap: 40px;
   }
   .footer__social-icons {
@@ -124,6 +125,29 @@ a:hover {
   }
   .footer__social-icons > *:not(:last-child) {
     margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  section {
+    width: 100%;
+    padding: 40px 16px;
+  }
+  .footer__logo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav__button {
+    width: 100%;
+  }
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 32px;
+  }
+  .wrapper div {
+    align-items: center;
   }
 }
 </style>
