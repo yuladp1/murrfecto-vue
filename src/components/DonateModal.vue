@@ -1,76 +1,61 @@
 <template>
-  <Teleport to="body" />
-  <section class="donate-modal" v-show="base.showModalDonate" ref="target">
-    <figure><img src="../assets/modals/kitten.png" alt="" /></figure>
-    <div class="donates-wrapper">
-      <p>Зібрані кошти підуть на харчування та медичну допомогу</p>
-      <div class="tabs">
-        <button :class="{ active: isActiveTab === 1 }" @click="addActiveTab(1)">
-          Одноразово
-        </button>
-        <button :class="{ active: isActiveTab === 2 }" @click="addActiveTab(2)">
-          Щомісячно
-        </button>
+  <Teleport to="body">
+    <section class="donate-modal" v-show="base.showModalDonate" ref="target">
+      <figure><img src="../assets/modals/kitten.png" alt="" /></figure>
+      <div class="donates-wrapper">
+        <p>Зібрані кошти підуть на харчування та медичну допомогу</p>
+        <div class="tabs">
+          <button :class="{ active: isActiveTab === 1 }" @click="addActiveTab(1)">
+            Одноразово
+          </button>
+          <button :class="{ active: isActiveTab === 2 }" @click="addActiveTab(2)">Щомісячно</button>
+        </div>
+        <div class="tabcontent">
+          <button class="sum20" @click="sum = 20">20</button>
+          <button class="sum50" @click="sum = 50">50</button>
+          <button class="sum100" @click="sum = 100">100</button>
+          <button class="sum200" @click="sum = 200">200</button>
+          <input class="other" v-model="sum" :placeholder="sum" />
+        </div>
+        <p>Допомогти конкретному котику</p>
+        <select v-model="selectedCat">
+          <option selected>Оберіть пухнастика</option>
+          <option v-for="cat in base.catsArray" :key="cat.ID" :value="catSelect">
+            {{ cat.CatsName }}
+          </option>
+        </select>
+        <button class="nav__button" @click='createOrder(sum, catSelect)'>Допомогти</button>
       </div>
-      <div class="tabcontent">
-        <button class="sum20" @click="sum = 20">20</button>
-        <button class="sum50" @click="sum = 50">50</button>
-        <button class="sum100" @click="sum = 100">100</button>
-        <button class="sum200" @click="sum = 200">200</button>
-        <input class="other" v-model="sum" :placeholder="sum" />
-      </div>
-      <p>Допомогти конкретному котику</p>
-      <select v-model="selectedCat">
-        <option selected>Оберіть пухнастика</option>
-        <option v-for="cat in base.catsArray" :key="cat.ID" :value="catSelect">
-          {{ cat.CatsName }}
-        </option>
-      </select>
-      <button class="nav__button" onclick="this.createOrder(sum.value, catSelect.value)">Допомогти</button>
-    </div>
-  </section>
-  <Teleport />
+    </section>
+  </Teleport>
 </template>
 
-<script>
+<script setup>
 import { ref } from 'vue'
 import { useCounterStore } from '../stores/counter'
 import { onClickOutside } from '@vueuse/core'
-export default {
-  name: 'DonateModal',
-  setup() {
-    const base = useCounterStore()
-    const sum = ref('')
-    const isActiveTab = ref('1')
-    const target = ref(null)
-    onClickOutside(target, () => {
-      base.showModalDonate = false
-    })
-    return {
-      base,
-      sum,
-      isActiveTab,
-      target
-    }
-  },
-  methods: {
-    addActiveTab(param) {
-      this.isActiveTab = param
-    },
-    createOrder(amount, order_desc) {
-      var button = window.$ipsp.get('.nav__button')
-      button.setMerchantId(1396424)
-      button.setAmount(amount, 'UAH')
-      button.setResponseUrl('http://example.com/result/')
-      button.setHost('pay.fondy.eu')
-      button.addField({
-        label: `Допомога для ${this.cat.value}`,
-        name: 'order_desc',
-        value: order_desc
-      })
-      window.location.href = button.getUrl()
-    }
-  }
+const base = useCounterStore()
+const sum = ref('')
+const isActiveTab = ref('1')
+const target = ref(null)
+onClickOutside(target, () => {
+  base.showModalDonate = false
+})
+const addActiveTab = (param) => {
+  isActiveTab.value = param
+}
+const createOrder = (amount, order_desc) => {
+  var button = window.$ipsp.get('button')
+  button.setMerchantId(1396424)
+  button.setAmount(amount, 'UAH')
+  button.setResponseUrl('http://example.com/result/')
+  button.setHost('pay.fondy.eu')
+  button.addField({
+    label: 'Допомога для',
+    name: 'order_desc',
+    value: order_desc
+  })
+  window.location.href = button.getUrl()
 }
 </script>
 

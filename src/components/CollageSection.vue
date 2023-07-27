@@ -40,12 +40,6 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'CollageSection'
-}
-</script>
-
 <style lang="scss" scoped>
 .collage__container {
   display: flex;

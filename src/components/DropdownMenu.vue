@@ -21,21 +21,9 @@
   </nav>
 </template>
 
-<script>
-import { useRouter } from 'vue-router'
+<script setup>
 import { useCounterStore } from '../stores/counter'
-
-export default {
-  name: 'DropdownMenu',
-  setup() {
-    const router = useRouter()
-    const base = useCounterStore()
-    return {
-      base,
-      router
-    }
-  }
-}
+const base = useCounterStore()
 </script>
 
 <style lang="scss" scoped>

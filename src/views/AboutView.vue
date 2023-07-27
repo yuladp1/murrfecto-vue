@@ -48,22 +48,11 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { onMounted } from 'vue'
-import { useCounterStore } from '../stores/counter'
-
-export default {
-  name: 'AboutView',
-  setup() {
-    const base = useCounterStore()
-    onMounted(() => {
+onMounted(() => {
       window.scrollTo(0, 0)
     })
-    return {
-      base
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>

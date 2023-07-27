@@ -21,16 +21,11 @@
   </nav>
 </template>
 
-<script>
+<script setup>
 import { useRouter } from 'vue-router'
 import { useCounterStore } from '../stores/counter'
-export default {
-  setup() {
-    const base = useCounterStore()
-    const router = useRouter()
-    return { base, router }
-  }
-}
+const base = useCounterStore()
+const router = useRouter()
 </script>
 
 <style lang="scss" scoped>

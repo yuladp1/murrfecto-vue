@@ -1,60 +1,53 @@
 <template>
   <section>
     <div class="one-cat__header">
-      <h2>{{ this.cat.CatsName }}</h2>
+      <h2>{{ cat.CatsName }}</h2>
     </div>
     <div class="wrapper">
       <div class="images">
-        <figure class="image-main"><img :src="this.cat.images[0]" alt="" /></figure>
-        <figure class="image-1"><img :src="this.cat.images[1]" alt="" /></figure>
-        <figure class="image-2"><img :src="this.cat.images[2]" alt="" /></figure>
-        <figure class="image-3"><img :src="this.cat.images[3]" alt="" /></figure>
+        <figure class="image-main"><img :src="changeCatPhoto" alt="" /></figure>
+        <figure class="image-1">
+          <img :src="cat.images[1]" @click="changeCatPhoto = cat.images[1]" alt="" />
+        </figure>
+        <figure class="image-2">
+          <img :src="cat.images[2]" @click="changeCatPhoto = cat.images[2]" alt="" />
+        </figure>
+        <figure class="image-3">
+          <img :src="cat.images[3]" @click="changeCatPhoto = cat.images[3]" alt="" />
+        </figure>
       </div>
       <div class="info">
-        <h3>Ти можеш допомогти {{ this.cat.CatsName }}</h3>
+        <h3>Ти можеш допомогти {{ cat.CatsName }}</h3>
         <div class="field-name">Стать:</div>
-        <div class="field-value sex">{{ this.cat.sex }}</div>
+        <div class="field-value sex">{{ cat.sex }}</div>
         <div class="field-name">Вік:</div>
-        <div class="field-value age">{{ this.cat.age }}</div>
+        <div class="field-value age">{{ cat.age }}</div>
         <div class="field-name">Наявність чіпа:</div>
-        <div class="field-value chip">{{ this.cat.chip }}</div>
+        <div class="field-value chip">{{ cat.chip }}</div>
         <div class="field-name cat-info">Інформація</div>
-        <div class="field-value">{{ this.cat.info }}</div>
+        <div class="field-value">{{ cat.info }}</div>
       </div>
     </div>
     <CardsSection />
   </section>
 </template>
 
-<script>
+<script setup>
 import { useCounterStore } from '../stores/counter'
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import CardsSection from '../components/CardsSection.vue'
-
-export default {
-  name: 'OneCat',
-  components: {
-    CardsSection
-  },
-  props: {
-    id: {
-      type: String,
-      required: true
-    }
-  },
-  setup(props) {
-    const counter = useCounterStore()
-    const cat = computed(() => counter.catsArray.find((c) => c.ID === props.id))
-    onMounted(() => {
-      window.scrollTo(0, 0)
-    })
-
-    return {
-      counter,
-      cat
-    }
+const counter = useCounterStore()
+const props = defineProps ({
+  id: {
+   type: String,
+   required: true
   }
-}
+})
+const cat = computed(() => counter.catsArray.find((c) => c.ID === props.id)) 
+const changeCatPhoto = ref(cat.value.images[0])
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>
 
 <style lang="scss" scoped>

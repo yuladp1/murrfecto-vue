@@ -28,19 +28,13 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { useCounterStore } from '../stores/counter'
 import { onMounted } from 'vue'
-export default {
-  components: {},
-  setup() {
-    const counter = useCounterStore()
-    onMounted(() => {
-      window.scrollTo(0, 0)
-    })
-    return { counter }
-  }
-}
+const counter = useCounterStore()
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>
 
 <style lang="scss" scoped>

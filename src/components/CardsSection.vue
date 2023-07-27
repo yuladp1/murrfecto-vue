@@ -27,24 +27,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { computed } from 'vue'
 import { useCounterStore } from '../stores/counter'
 import { useRouter } from 'vue-router'
-
-export default {
-  components: {},
-  setup() {
     const counter = useCounterStore()
     const router = useRouter()
     const someCats = computed(() => counter.catsArray.slice(0, 4))
-    return {
-      counter,
-      router,
-      someCats
-    }
-  }
-}
 </script>
 
 <style scoped>

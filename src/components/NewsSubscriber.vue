@@ -8,11 +8,6 @@
     </form>
   </section>
 </template>
-<script>
-export default {
-  name: 'NewsSubscriber'
-}
-</script>
 
 <style lang="scss" scoped>
 section {

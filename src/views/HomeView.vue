@@ -1,5 +1,4 @@
 <template>
-  <!-- <donate-modal/> -->
   <BannerSection />
   <CollageSection />
   <DonateCards />

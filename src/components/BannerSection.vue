@@ -7,12 +7,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BannerSection'
-}
-</script>
-
 <style lang="scss" scoped>
 .banner__container {
   position: relative;

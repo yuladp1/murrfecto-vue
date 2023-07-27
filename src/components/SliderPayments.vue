@@ -37,20 +37,13 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'slider-payments',
-  data() {
-    return {
-      isActiveSlide: false
+<script setup>
+import { ref } from 'vue';
+      const isActiveSlide = ref(false) 
+
+   const showSlide = (index) => {
+      isActiveSlide.value = index
     }
-  },
-  methods: {
-    showSlide(index) {
-      this.isActiveSlide = index
-    }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
