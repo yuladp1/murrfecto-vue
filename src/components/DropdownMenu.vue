@@ -1,11 +1,13 @@
 <template>
   <nav v-show="base.showModalDropdown">
     <div class="closeModal" @click="base.showModalDropdown = false"></div>
-    <div class="nav__buttons">
+    <hr>
+     <div class="nav__buttons">
       <p @click="base.closeModalAndNavigate('/about')">Про притулок</p>
       <p @click="base.closeModalAndNavigate(`/our-cats`)">Наші хвости</p>
       <p @click="base.closeModalAndNavigate(`/contacts`)">Контакти</p>
     </div>
+ 
     <div class="social-media">
       <figure>
         <img src="../assets/icons/socials.svg" alt="" />
@@ -59,6 +61,11 @@ nav {
 
 .closeModal::after {
   transform: rotate(-45deg);
+}
+hr {
+  width: 100%;
+  height: 1px;
+  background: #AEAEAE;
 }
 .nav__buttons {
   width: 50%;
@@ -118,5 +125,28 @@ nav {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+}
+@media screen and (max-width: 768px) {
+  nav {
+    width: 390px;
+    height: 568px;
+  }
+  .closeModal {
+    cursor: pointer;
+  // margin: 25px 20px 25px auto;
+  }
+  .nav__buttons {
+  width: 50%;
+  margin: 60px auto 40px auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 24px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .closeModal {
+   margin: 25px 20px 25px auto;
+  }
 }
 </style>

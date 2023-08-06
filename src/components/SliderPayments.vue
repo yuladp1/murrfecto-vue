@@ -19,12 +19,31 @@
         </div>
         <div class="payment__img"></div>
       </div>
+
       <div class="slide" :class="{ active: isActiveSlide === 1 }" @click="showSlide(1)">
-        <div class="payment__buttons"></div>
+        <div class="payment__buttons">
+          <p>Ваша підтримка змінить життя одного кота!</p>
+          <div class="buttons__wrapper">
+            <button class="button__20">20</button>
+            <button class="button__50">50</button>
+            <button class="button__100">100</button>
+            <button class="button__200">200</button>
+            <button class="button__another-sum"></button>
+          </div>
+        </div>
         <div class="payment__img"></div>
       </div>
       <div class="slide" :class="{ active: isActiveSlide === 2 }" @click="showSlide(2)">
-        <div class="payment__buttons"></div>
+        <div class="payment__buttons">
+          <p>Ваша підтримка змінить життя одного кота!</p>
+          <div class="buttons__wrapper">
+            <button class="button__20">20</button>
+            <button class="button__50">50</button>
+            <button class="button__100">100</button>
+            <button class="button__200">200</button>
+            <button class="button__another-sum"></button>
+          </div>
+        </div>
         <div class="payment__img"></div>
       </div>
     </div>

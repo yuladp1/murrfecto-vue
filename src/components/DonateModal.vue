@@ -24,7 +24,7 @@
             {{ cat.CatsName }}
           </option>
         </select>
-        <button class="nav__button" @click='createOrder(sum, catSelect)'>Допомогти</button>
+        <button class="nav__button" @click="createOrder(sum, catSelect)">Допомогти</button>
       </div>
     </section>
   </Teleport>
@@ -142,5 +142,47 @@ p {
 .nav__button {
   width: 100%;
   margin-top: 24px;
+}
+@media screen and (max-width: 1001px) {
+  section {
+  width: 75%;
+}
+}
+@media screen and (max-width: 788px) {
+  section {
+  width: 100%;
+  top: 0;
+}
+p {
+  margin: 20px -30px 20px -30px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+}
+}
+@media screen and (max-width: 390px) {
+  section {
+    position: absolute;
+    flex-direction: column-reverse;
+    top: 0;
+    width: 100%;
+    height: auto;
+      }
+  figure {
+        height: 50%;
+      }
+  img {
+    height: 100%;
+    width: auto;
+      }
+  .donates-wrapper {
+     width: 100%;
+     height: 50%;
+     padding: 0 10px;
+}
+p {
+  margin: 0;
+}
 }
 </style>

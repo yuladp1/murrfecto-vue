@@ -31,7 +31,6 @@ const router = useRouter()
 <style lang="scss" scoped>
 .nav__container {
   width: 89%;
-  // margin: 0 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +60,7 @@ const router = useRouter()
 .burger {
   display: none;
   width: 32px;
-  height: 32px;
+    height: 32px;
 }
 .burger:hover {
   cursor: pointer;
@@ -88,6 +87,11 @@ const router = useRouter()
   .nav__brand {
     width: 19%;
     height: auto;
+    z-index: 10;
+  }
+  figure {
+    width: 100%;
+    height: 100%;
   }
   .nav__buttons {
     display: none;
@@ -103,6 +107,25 @@ const router = useRouter()
       width: 100%;
       border: 1px solid #4b3542;
     }
+  }
+}
+@media screen and (max-width: 390px) {
+  .nav__container {
+    height: 80px;
+    margin: 0;
+    padding: 24px 17px;
+    width: 100%;
+  }
+  .nav__brand {
+    width: 22%;
+    height: auto;
+  }
+  .nav__button {
+    display: none;
+  }
+  .burger {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

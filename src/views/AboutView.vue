@@ -2,14 +2,14 @@
   <section class="about-us">
     <div class="about-us__header"><h2>Про притулок</h2></div>
     <div class="about-us__content">
-      <div class="content-item-wrapper">
+      <div class="content-item-wrapper ">
         <figure><img src="../assets/about-us/img1.png" alt="" /></figure>
         <p>
           Багато людей хоче завести кота, але не можуть це зробити з певних причин: орендоване
           житло, спротив родини, переїзди і зайнятість.
         </p>
       </div>
-      <div class="content-item-wrapper">
+      <div class="content-item-wrapper content-item-wrapper-second">
         <p>
           Є багато котів, які живуть прайдом в більш-менш безпечному місці, мають свої звички і
           почуваються досить добре, аби була б постійна їжа.
@@ -134,6 +134,11 @@ p {
   position: relative;
   height: 100%;
   background: white;
+  .pdf-wrapper {
+  width: 100%;
+  height: 100%;
+  // padding: 16px 0;
+}
 }
 .pdf {
   position: absolute;
@@ -144,5 +149,73 @@ p {
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.25rem;
+}
+@media screen and (max-width: 628px) {
+  .about__documents {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+  }
+}
+@media screen and (max-width: 430px) {
+  .about-us__header {
+  padding: 18px 0;
+  h2 {
+    font-size: 2rem;
+  }
+}
+.about-us__content {
+  padding: 32px 0;
+}
+  .content-item-wrapper {
+    flex-direction: column;
+    gap: 32px;
+     figure, p {
+    width: 92%;
+  }
+  }
+  .content-item-wrapper-second{
+    flex-direction: column-reverse;
+  }
+  .content-item-wrapper:not(:last-child) {
+  margin-bottom: 32px;
+}
+.about-us__info-wrapper {
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.info-item {
+  width: 51%;
+  figure {
+    padding-bottom: 32px;
+  }
+}
+.about__documents {
+  flex-direction: column;
+  display: flex;
+    justify-content: space-between;
+   margin: 111px auto;
+   width: 92%;
+   height: auto;
+}
+.about__documents>div {
+  padding: 0;
+  flex: none;
+}
+.pdf-wrapper {
+  width: 100%;
+  height: 76px;
+  padding: 16px 0;
+}
+.pdf {
+  position: absolute;
+    top: 24px;
+}
+.pdf-wrapper:last-child {
+  font-family: Nunito;
+  font-size: 1.5rem;
+font-style: normal;
+ padding: 24px 0;
+}
 }
 </style>

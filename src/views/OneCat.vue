@@ -34,7 +34,7 @@
 
 <script setup>
 import { useCounterStore } from '../stores/counter'
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted,  ref, watch } from 'vue'
 import CardsSection from '../components/CardsSection.vue'
 const counter = useCounterStore()
 const props = defineProps ({
@@ -44,7 +44,13 @@ const props = defineProps ({
   }
 })
 const cat = computed(() => counter.catsArray.find((c) => c.ID === props.id)) 
-const changeCatPhoto = ref(cat.value.images[0])
+const changeCatPhoto = ref(null)
+changeCatPhoto.value = ref(cat.value.images[0])
+watch(()=>props.id, (newCount)=> {
+cat.value = computed(() => counter.catsArray.find((c) => c.ID === newCount)) 
+ changeCatPhoto.value = ref(cat.value.images[0])
+}    )
+
 onMounted(() => {
   window.scrollTo(0, 0)
 })
