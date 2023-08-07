@@ -1,26 +1,9 @@
-<script>
-import { onMounted } from 'vue'
-import { useCounterStore } from './stores/counter'
+<script setup>
 import DropdownMenu from './components/DropdownMenu.vue'
 import DonateModal from './components/DonateModal.vue'
 import ContactsTab from './components/ContactsTab.vue'
 import HeaderMenu from './components/HeaderMenu.vue'
 import FooterSection from './components/FooterSection.vue'
-export default {
-  components: {
-    DropdownMenu,
-    DonateModal,
-    ContactsTab,
-       HeaderMenu,
-       FooterSection
-   },
-  setup() {
-    const base = useCounterStore()
-    onMounted(() => {
-         });
-    return { base }
-  }
-}
 </script>
 
 <template>
@@ -65,7 +48,7 @@ img {
   object-fit: cover;
 }
 h2 {
-  font-size: 2.5rem ;
+font-size: 2.5rem ;
 font-weight: 700;
 text-align: center;
 padding-bottom: 60px;

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="our-cats__header">
+    <div class="our-cats__header" id="our-cats_top">
       <h2>Наші хвости</h2>
     </div>
     <div class="all-cards__wrapper">
@@ -25,6 +25,7 @@
         </div>
       </div>
     </div>
+    <a href="#our-cats_top">Повернутися</a>
   </section>
 </template>
 
@@ -63,7 +64,6 @@ h2 {
   width: 305px;
   height: 424px;
   position: relative;
-
   flex-wrap: wrap;
 }
 .one-card__wrapper:hover {
@@ -147,5 +147,48 @@ img {
   text-align: center;
   font-weight: 600;
   font-size: 1.5rem;
+}
+a {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .all-cards__wrapper {
+  padding: 100px 5% 0 5%;
+  }
+  a {
+    color:  #4F5A69;
+  display: block;
+  text-transform: uppercase;
+  font-family: Nunito Sans;
+font-size: 1.5rem;
+font-style: normal;
+font-weight: 600;
+text-align: center;
+text-decoration: underline;
+padding: 32px  0 82px 0;
+}
+
+}
+
+@media screen and (max-width: 680px) {
+  .all-cards__wrapper {
+    flex-direction: column;
+    padding: 32px 5% 0 5%;
+  }
+
+  }
+
+
+
+@media screen and (max-width: 430px) {
+  .our-cats__header {
+  padding: 18px 0;
+  h2 {
+    font-size: 2rem;
+  }
+}
+a {
+  padding: 32px 0;
+}
 }
 </style>
